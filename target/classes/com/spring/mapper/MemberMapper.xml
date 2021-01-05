@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+	 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	 
+ <mapper namespace="com.spring.mapper.MemberMapper">
+ 
+ <select id="getMembers" resultType="MemberVO">
+		SELECT * FROM member order by u_id
+	</select>
+ 	
+ 	<insert id="insertMember" parameterType="MemberVO">
+		INSERT INTO member VALUES (#{u_id}, #{u_pw}, #{u_name},#{u_nick}, #{u_birth}, #{u_addr},#{u_email},#{u_phone},#{u_agree},#{seller_key})
+	</insert>
+	
+	<select id="userCheck" parameterType="MemberVO" resultType="int">
+		SELECT count(*) FROM member WHERE u_id=#{u_id} and u_pw=#{u_pw}
+	</select>
+	
+	<select id="selectMember" parameterType="MemberVO" resultType="MemberVO">
+		SELECT * FROM member where u_id=#{u_id}
+	</select>
+	
+	<select id="getEvents" resultType="EventVO">
+		SELECT * FROM event 
+	</select>
+	
+	<select id="getReviews" resultType="ReviewVO">
+		SELECT * FROM review 
+	</select>
+	
+	<select id="getStores" resultType="StoreVO">
+		SELECT * FROM shop_reg          
+	</select>
+ </mapper>

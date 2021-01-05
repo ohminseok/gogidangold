@@ -1,15 +1,26 @@
 package com.spring.gogidang.qna;
 
+import java.util.Date;
+
 public class QnaVO {
 	private int qna_num;
 	private String u_id;
 	private String title;
 	private String content;
-	private String re_date;
+	private Date re_date;
+	private String qna_password;
 	private int re_ref;
 	private int re_lev;
 	private int re_seq;
 	
+	
+	
+	public String getQna_password() {
+		return qna_password;
+	}
+	public void setQna_password(String qna_password) {
+		this.qna_password = qna_password;
+	}
 	public int getQna_num() {
 		return qna_num;
 	}
@@ -34,10 +45,10 @@ public class QnaVO {
 	public void setContent(String content) {
 		this.content = content;
 	}
-	public String getRe_date() {
+	public Date getRe_date() {
 		return re_date;
 	}
-	public void setRe_date(String re_date) {
+	public void setRe_date(Date re_date) {
 		this.re_date = re_date;
 	}
 	public int getRe_ref() {
@@ -58,4 +69,8 @@ public class QnaVO {
 	public void setRe_seq(int re_seq) {
 		this.re_seq = re_seq;
 	}
+	
+
+	
+
 }

@@ -9,6 +9,14 @@ public class MemberVO {
 	private String u_addr;
 	private String u_email;
 	private String u_phone;
+	private int u_agree;
+	
+	public int getU_agree() {
+		return u_agree;
+	}
+	public void setU_agree(int u_agree) {
+		this.u_agree = u_agree;
+	}
 	private int seller_key;
 	
 	public String getU_id() {
